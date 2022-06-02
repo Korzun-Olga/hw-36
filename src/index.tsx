@@ -170,17 +170,19 @@ showArrayWithYear (movies, 1977)
 // А результатом этой функции должен быть новый отфильтрованный массив,
 // с фильмами, где строка входит в название фильма.
 
-const showArrayWithString= (array:Array<IMovie>, string:string) =>
-    array.filter((array:IMovie)=> array.title = `${string} : ${array.title}`,
+ const showArrayWithString= (array:Array<IMovie>, string:string) =>
+     array.filter((array:IMovie)=> array.title.includes(string),
     )
-showArrayWithString (movies, "Название фильма")
+showArrayWithString (movies, "Harry")
 
 // 7. Создать функцию, которая бы принимала массив фильмов и
 // строку. А результатом этой функции должен быть
 // отфильтрованный массив, с фильмами где строка входит в
 // название фильма или в его сюжет.
-
-
+const showNewArrayWithString= (array:Array<IMovie>, string:string) =>
+    array.filter((array:IMovie)=> array.title.includes(string)||array.plot.includes(string) ,
+    )
+showNewArrayWithString (movies, "Ron")
 
 // 8. Создать функцию, которая бы принимала 3 параметра:
 // 1)массив фильмов , 2) строка(название поля, например 'title') и
@@ -190,3 +192,5 @@ showArrayWithString (movies, "Название фильма")
 // передаем (films, 'title', 'Black Widow') и на выходе получаем
 // фильм с id=1 если передаем (films, 'year', 2011) , то получаем
 // фильм с id=2
+
+// тут не догадалась
